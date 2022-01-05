@@ -166,6 +166,7 @@
         name: virtlogd_t
         permissive: true
       become: true
+      ignore_errors: true
 
     - name: allow port 2222 for IPv6 socks proxy
       ansible.posix.firewalld:
@@ -174,6 +175,7 @@
         permanent: yes
         state: enabled
       become: true
+      ignore_errors: true
 
   handlers:
     - name: reboot
